@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hành Trình Của Chúng Ta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-3d"> </div>
+    <div class="login-screen" id="loginScreen">
+        <div class="login-box" id="loginBox">
+            <h2>💖 Nhập mật khẩu tình yêu 💖</h2>
+
+            <input type="password" id="password" placeholder="Một điều chỉ hai ta biết 💌">
+            <button onclick="checkPassword()">Vào timeline ✨</button>
+
+            <div id="error"></div>
+            <div id="hint"></div>
+        </div>
+    </div>
+    <div class="timeline-container hidden" id="timeline">
+        <h1 class="title">Hành Trình Của Chúng Ta</h1>
+
+        <div class="timeline">
+
+            <div class="event" data-message="Anh luôn muốn được chơi cầu lông với em mà chưa có cơ hội 💖">
+                <span class="time">07:00-08:00</span>
+                <span class="dot"></span>
+                <span class="text">Cùng chơi cầu lông</span>
+            </div>
+
+            <div class="event" data-message="Chúng ta đã có một buổi sáng chơi thể thao rèn luyện sức khỏe rồi và giờ cb hành trang cùng đi với anh nhé🏸">
+                <span class="time">08:00-09:00</span>
+                <span class="dot"></span>
+                <span class="text">Cùng chuẩn bị đi thôi</span>
+            </div>
+
+            <div class="event" data-message="Cuối cùng cũng đến địa điểm đầu tiên anh muốn dẫn em đến, anh nghe em kể về đôi giày cũ đang bong keo, chật níc làm cho đôi chân nhỏ nhắn của em bị thương, bị đau vậy hãy cùng nhau ghé qua Nagashoes chọn một đôi cùng anh nha em.">
+                <span class="time">10:30-11:30</span>
+                <span class="dot"></span>
+                <span class="text">Mua giày cho em</span>
+            </div>
+
+            <div class="event" data-message="Ngồi bên nhau, chăm sóc nhau từng miếng từng miếng. Anh hy vong em sẽ thích ">
+                <span class="time">11:45-12:45</span>
+                <span class="dot"></span>
+                <span class="text">Bữa trưa cùng anh</span>
+            </div>
+            <div class="event" data-message="Ngồi bên nhau, tựa vào nhau nghỉ ngơi một xíu em nhé, hãy cùng xem phim hay kể những câu chuyện thú vị của hai ta và ngắm nhìn nhau thật dịu dàng ☕">
+                <span class="time">13:00-13:45</span>
+                <span class="dot"></span>
+                <span class="text">Cafe cùng nhau</span>
+            </div>
+            <div class="event" data-message="Chuyến đi nào rồi cũng sẽ có kết thúc, chúng ta đã dành trọn cả 1 ngày để bên nhau, yêu thương nhau. Em thấy sao khi cùng anh dạo một vòng trong một nhà sách rộng lớn và đắm mình trong biển kiến thức mênh mông vô bờ">
+                <span class="time">14:00-15:30</span>
+                <span class="dot"></span>
+                <span class="text">Dạo chơi nhà sách</span>
+            </div>
+            <div class="event" data-message="Chuyến đi hôm nay em thấy thế nào, có vui như những gì em đã tưởng tượng không, hay cho anh biết những suy nghĩ đáng yêu trong em và cho anh cơ hội hẹn gặp em vào một ngày không xa em nhé.">
+                <span class="time">15:30</span>
+                <span class="dot"></span>
+                <span class="text">Cùng về nhà nha</span>
+            </div>
+        </div>
+
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

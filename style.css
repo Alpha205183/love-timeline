@@ -1,0 +1,349 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #ffe6f0, #fdfbff);
+    color: #3a3a3a;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.25), transparent 40%), radial-gradient(circle at 70% 60%, rgba(255,126,179,0.2), transparent 45%);
+    filter: blur(60px);
+    z-index: -1;
+}
+
+
+
+.timeline-container {
+    max-width: 420px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Georgia', serif;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 60px;
+}
+
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 28px;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: rgba(255,255,255,0.3);
+    }
+
+.event {
+    position: relative;
+    margin-bottom: 55px;
+    cursor: pointer;
+}
+
+.time {
+       position: absolute;
+    left: -60px;
+    font-size: 14px;
+    color: #ccc;
+    color: #b85c8e;
+    font-weight: 500;
+}
+
+.dot {
+    position: absolute;
+    left: 21px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.5);
+    background: #ff5fa2;
+    box-shadow: 0 0 10px rgba(255,95,162,0.6);
+}
+
+.text {
+    margin-left: 50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.event:hover .dot {
+    background: #ff7eb3;
+    box-shadow: 0 0 10px #ff7eb3;
+}
+
+ /*Tooltip */
+.tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: rgba(20, 20, 20, 0.92);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: none;
+    max-width: 240px;
+    max-height: 60vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    display: none;
+}
+    .tooltip img {
+        width: 100%;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+
+    .tooltip b {
+        display: block;
+        margin-bottom: 6px;
+    }
+.tooltip {
+    animation: tooltipFade 0.25s ease;
+}
+    .tooltip::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .tooltip::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.3);
+        border-radius: 10px;
+    }
+
+
+@keyframes tooltipFade {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.login-screen {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(200,160,255,0.45), transparent 40%), radial-gradient(circle at 70% 60%, rgba(255,140,200,0.35), transparent 45%), linear-gradient(180deg, #f5f0ff, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(255,126,179,0.3);
+}
+
+    .login-box h2 {
+        margin-bottom: 20px;
+        font-family: Georgia, serif;
+    }
+
+    .login-box input {
+        padding: 10px;
+        border-radius: 12px;
+        border: none;
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .login-box button {
+        background: #ff7eb3;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+#error {
+    color: #ff9aa2;
+    font-size: 13px;
+    margin-top: 10px;
+}
+.heart {
+      position: fixed;
+    top: -20px;
+    font-size: 16px;
+    animation: fall linear forwards;
+    color: #ff7eb3;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(10px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    transition: all 1.2s ease;
+}
+.shake {
+    animation: shake 0.35s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-6px);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+
+    75% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+.fade-out {
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+}
+#hint {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #ffb6d5;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+.bg-3d {
+    position: fixed;
+    inset: -30%;
+    background: radial-gradient(circle at center, rgba(255,126,179,0.25), transparent 40%), radial-gradient(circle at 70% 30%, rgba(200,180,255,0.25), transparent 45%);
+    filter: blur(80px);
+    z-index: -2;
+    transition: transform 0.1s ease-out;
+}
+.cursor-heart {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    font-size: 14px;
+    color: #ff6fae;
+    animation: heartFall 1.8s ease-out forwards;
+    z-index: 999;
+}
+
+@keyframes heartFall {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translate(0, -20px) scale(1.2);
+    }
+
+    100% {
+        transform: translate( calc(-30px + 60px * var(--randX)), 120px ) rotate(360deg);
+        opacity: 0;
+    }
+}
+@media (max-width: 600px) {
+
+    .timeline-container {
+        max-width: 100%;
+        padding: 24px 14px;
+        border-radius: 20px;
+    }
+
+    .title {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .timeline {
+        padding-left: 44px;
+    }
+
+        .timeline::before {
+            left: 20px;
+        }
+
+    .dot {
+        left: 14px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .time {
+        left: -52px;
+        font-size: 12px;
+    }
+
+    .text {
+        margin-left: 34px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+@media (max-width: 600px) {
+    .tooltip {
+        max-width: 85vw;
+        font-size: 13px;
+        padding: 12px 14px;
+    }
+}
+@media (max-width: 600px) {
+    .login-box {
+        width: 90%;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+        .login-box h2 {
+            font-size: 20px;
+        }
+
+        .login-box input {
+            font-size: 16px; /* iOS không zoom */
+        }
+}
