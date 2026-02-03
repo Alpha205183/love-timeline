@@ -174,10 +174,10 @@ document.addEventListener("click", () => {
     if (tooltip) tooltip.style.display = "none";
 });
 function showTooltip(eventEl, e) {
-    tooltip.innerHTML = eventEl.dataset.info;
+    tooltip.innerHTML = eventEl.dataset.message;
     tooltip.style.display = "block";
 
-    const offset = 18; // khoảng cách dưới chuột
+    const offset = 18; 
 
     tooltip.style.left = e.clientX + "px";
     tooltip.style.top = (e.clientY + offset) + "px";
