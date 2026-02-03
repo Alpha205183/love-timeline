@@ -1,4 +1,4 @@
-body {
+﻿body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: radial-gradient(circle at top, #ffe6f0, #fdfbff);
@@ -86,20 +86,20 @@ body::before {
  /*Tooltip */
 .tooltip {
     position: fixed;
-    z-index: 10000;
     background: rgba(20, 20, 20, 0.92);
     color: #fff;
-    padding: 14px 18px;
-    border-radius: 16px;
+    padding: 16px 20px;
+    border-radius: 18px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.6;
+    max-width: 360px;
+    min-width: 260px;
     display: none;
-    max-width: 240px;
-    max-height: 60vh;
-    overflow-y: auto;
+    pointer-events: none; /* 👈 QUAN TRỌNG */
+    z-index: 9999;
     box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    display: none;
 }
+
     .tooltip img {
         width: 100%;
         border-radius: 12px;
@@ -344,6 +344,6 @@ body::before {
         }
 
         .login-box input {
-            font-size: 16px; /* iOS kh�ng zoom */
+            font-size: 16px; /* iOS không zoom */
         }
 }

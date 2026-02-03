@@ -173,3 +173,18 @@ document.querySelectorAll(".event").forEach(event => {
 document.addEventListener("click", () => {
     if (tooltip) tooltip.style.display = "none";
 });
+function showTooltip(eventEl, e) {
+    tooltip.innerHTML = eventEl.dataset.info;
+    tooltip.style.display = "block";
+
+    const offset = 18; // khoảng cách dưới chuột
+
+    tooltip.style.left = e.clientX + "px";
+    tooltip.style.top = (e.clientY + offset) + "px";
+}
+document.addEventListener("mousemove", (e) => {
+    if (tooltip.style.display === "block") {
+        tooltip.style.left = e.clientX + "px";
+        tooltip.style.top = (e.clientY + 18) + "px";
+    }
+});
