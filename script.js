@@ -164,11 +164,21 @@ document.addEventListener("mousemove", (e) => {
     }, 1600);
 });
 document.querySelectorAll(".event").forEach(event => {
+
+  
+    event.addEventListener("mouseenter", (e) => {
+        if (window.innerWidth >= 600) {
+            showTooltip(event, e);
+        }
+    });
+
+
     event.addEventListener("click", (e) => {
-        e.stopPropagation();
         showTooltip(event, e);
     });
+
 });
+
 
 document.addEventListener("click", () => {
     if (tooltip) tooltip.style.display = "none";
@@ -188,3 +198,4 @@ document.addEventListener("mousemove", (e) => {
         tooltip.style.top = (e.clientY + 18) + "px";
     }
 });
+
